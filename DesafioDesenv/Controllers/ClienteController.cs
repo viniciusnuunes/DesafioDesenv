@@ -1,4 +1,5 @@
-﻿using DesafioDesenv.Repository;
+﻿using DesafioDesenv.Models;
+using DesafioDesenv.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,23 @@ namespace DesafioDesenv.Controllers
         public ActionResult Index()
         {
             return View(contexto.Clientes.ToList());
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                contexto.Clientes.Add(cliente);
+                contexto.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }

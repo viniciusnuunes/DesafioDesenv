@@ -21,7 +21,7 @@ namespace DesafioDesenv.Models
 
         [Required]
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime dataDeNascimento { get; set; }
 
         [Required]
