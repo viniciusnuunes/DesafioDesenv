@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace DesafioDesenv.Models
 {
@@ -22,7 +19,7 @@ namespace DesafioDesenv.Models
         [Required]
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        public DateTime dataDeNascimento { get; set; }
+        public string dataDeNascimento { get; set; }
 
         [Required]
         [Display(Name = "Telefone")]

@@ -1,9 +1,7 @@
 ﻿using DesafioDesenv.Models;
 using DesafioDesenv.Repository;
-using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DesafioDesenv.Controllers
@@ -29,6 +27,27 @@ namespace DesafioDesenv.Controllers
             if (ModelState.IsValid)
             {
                 contexto.Clientes.Add(cliente);
+                contexto.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var clientEdit = (from c in contexto.Clientes
+                              where c.clienteID == id
+                              select c).FirstOrDefault();
+
+            return View(clientEdit);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Cliente cliente, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                contexto.Entry(cliente).State = EntityState.Modified;
                 contexto.SaveChanges();
                 return RedirectToAction("Index");
             }
