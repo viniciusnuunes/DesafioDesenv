@@ -4,55 +4,62 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+    <h4>Detalhes do Cliente</h4>    
+    <div class="row">
+        <dl class="dl-horizontal col-md-6 tabelaDeExibicao">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sobrenome)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sobrenome)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Sobrenome)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.dataDeNascimento)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.dataDeNascimento)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.dataDeNascimento)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.dataDeNascimento)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <hr />
+            <p class="botaoDetalhes">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.clienteID }, new { @class = "btn btn-primary btn-sm"}) 
+                @* @Html.ActionLink("Voltar à lista", "Index") *@
+                <a href="@Url.Action("Index", "Cliente")" class="btn btn-primary btn-sm">
+                    Voltar à Lista
+                </a>
+            </p>
+        </dl>
 
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.clienteID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+

@@ -8,7 +8,7 @@ namespace DesafioDesenv.Controllers
 {
     public class ClienteController : Controller
     {
-        private DataContext contexto = new DataContext();
+        public DataContext contexto = new DataContext();        
 
         // GET: Cliente
         public ActionResult Index()
@@ -84,6 +84,12 @@ namespace DesafioDesenv.Controllers
             {
                 return View();
             }            
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            contexto.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

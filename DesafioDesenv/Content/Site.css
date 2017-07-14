@@ -16,3 +16,61 @@ textarea {
     max-width: 280px;
 }
 
+.table {
+    text-align: center;
+}
+
+.tabelaLista {
+    padding: 30px;
+    box-shadow: 0px 0px 20px 2px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+tbody tr:hover {
+    background-color: #E8D8B1;
+}
+
+th {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+dl {    
+    padding: 20px;
+    
+    // width: 50%;
+    // box-shadow: 3px 3px 20px 2px;
+    // border-radius: 7px;
+}
+
+.dl-horizontal dt {
+    text-align: left;
+}
+
+.botaoDetalhes{
+    text-align: center;
+}
+
+.dl-horizontal dt, .dl-horizontal dd {
+    padding: 3px;
+}
+
+.tabelaDeExibicao {
+    background-color: #E8D8B1;
+    box-shadow: 3px 3px 20px 2px;
+    font-size: 110%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-horizontal {    
+    padding: 30px 20px 20px 20px;
+    // font-size: 15px;
+    // width: 50%;
+    //box-shadow: 3px 3px 20px 2px;
+    // border-radius: 7px;
+    // font-family: sans-serif;
+    margin: 10px;
+}
+
+
