@@ -52,6 +52,5 @@ C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\Desa
 C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.csprojResolveAssemblyReference.cache
 C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.dll
 C:\Users\vinicius.nunes\Documents\visual studio 2017\Projects\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.pdb
