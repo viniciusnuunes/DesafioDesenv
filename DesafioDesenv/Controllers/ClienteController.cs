@@ -53,5 +53,37 @@ namespace DesafioDesenv.Controllers
             }
             return View();
         }
+
+        public ActionResult Details(Cliente cliente, int id)
+        {
+            var clienteDetails = (from c in contexto.Clientes
+                                  where c.clienteID == id
+                                  select c).FirstOrDefault();
+            return View(clienteDetails);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var clienteDelete = (from c in contexto.Clientes
+                                 where c.clienteID == id
+                                 select c).FirstOrDefault();
+            return View(clienteDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Cliente cliente, int id)
+        {
+            try
+            {
+                var clienteDelete = contexto.Clientes.Find(id);
+                contexto.Clientes.Remove(clienteDelete);
+                contexto.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }            
+        }
     }
 }
