@@ -2,6 +2,7 @@
 using DesafioDesenv.Repository;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 
 namespace DesafioDesenv.Controllers
@@ -24,11 +25,18 @@ namespace DesafioDesenv.Controllers
         [HttpPost]
         public ActionResult Create(Cliente cliente)
         {
-            if (ModelState.IsValid)
+            try
             {
-                contexto.Clientes.Add(cliente);
-                contexto.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    contexto.Clientes.Add(cliente);
+                    contexto.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Não foi possível criar no momento. Tente novamente.");
             }
             return View();
         }
@@ -45,16 +53,23 @@ namespace DesafioDesenv.Controllers
         [HttpPost]
         public ActionResult Edit(Cliente cliente, int id)
         {
-            if (ModelState.IsValid)
+            try
             {
-                contexto.Entry(cliente).State = EntityState.Modified;
-                contexto.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    contexto.Entry(cliente).State = EntityState.Modified;
+                    contexto.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            catch
+            {
+                ModelState.AddModelError("", "Não foi possível editar o cliente. Tente novamente.");
+            }            
             return View();
         }
 
-        public ActionResult Details(Cliente cliente, int id)
+        public ActionResult Details(int id)
         {
             var clienteDetails = (from c in contexto.Clientes
                                   where c.clienteID == id
@@ -82,8 +97,9 @@ namespace DesafioDesenv.Controllers
             }
             catch
             {
-                return View();
-            }            
+                ModelState.AddModelError("", "Não foi possível deletar o cliente. Tente novamente.");
+            }
+            return View();
         }
 
         protected override void Dispose(bool disposing)
