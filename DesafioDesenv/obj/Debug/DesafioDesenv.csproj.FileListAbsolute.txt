@@ -110,3 +110,4 @@ C:\VisualStudio Projetos\DesafioDesenv\DesafioDesenv\bin\pt-br\System.Web.Helper
 C:\VisualStudio Projetos\DesafioDesenv\DesafioDesenv\bin\pt-br\System.Web.Mvc.resources.dll
 C:\VisualStudio Projetos\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.dll
 C:\VisualStudio Projetos\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.pdb
+C:\Users\vinicius.nunes\Documents\Visual Studio 2017\Projects\DesafioDesenv\DesafioDesenv\obj\Debug\DesafioDesenv.csprojResolveAssemblyReference.cache

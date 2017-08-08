@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioDesenv", "DesafioDesenv\DesafioDesenv.csproj", "{93525B25-DEFA-46FC-B790-3B75D93A3693}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioDesenv.Test", "DesafioDesenv.Test\DesafioDesenv.Test.csproj", "{A6B0B830-F371-4627-BFDB-1114ED64E1EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{93525B25-DEFA-46FC-B790-3B75D93A3693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93525B25-DEFA-46FC-B790-3B75D93A3693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93525B25-DEFA-46FC-B790-3B75D93A3693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B0B830-F371-4627-BFDB-1114ED64E1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B0B830-F371-4627-BFDB-1114ED64E1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B0B830-F371-4627-BFDB-1114ED64E1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B0B830-F371-4627-BFDB-1114ED64E1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
