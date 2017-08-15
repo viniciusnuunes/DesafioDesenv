@@ -9,17 +9,47 @@ namespace DesafioDesenv.Controllers
 {
     public class ClienteController : Controller
     {
-        public DataContext contexto = new DataContext();        
+        public DataContext contexto = new DataContext();
+        public DataService service = new DataService(new DataContext());
 
         // GET: Cliente
         public ActionResult Index()
         {
-            return View(contexto.Clientes.ToList());
+            return View(service.GetClients());
         }
 
+        // GET
         public ActionResult Create()
         {
             return View();
+        }
+
+        // GET
+        public ActionResult Edit(int id)
+        {
+            var clientEdit = (from c in contexto.Clientes
+                              where c.clienteID == id
+                              select c).FirstOrDefault();
+
+            return View(clientEdit);
+        }
+
+        // GET
+        public ActionResult Details(int id)
+        {
+            var clienteDetails = (from c in contexto.Clientes
+                                  where c.clienteID == id
+                                  select c).FirstOrDefault();
+            return View(clienteDetails);
+        }
+
+        // GET
+        public ActionResult Delete(int id)
+        {
+            var clienteDelete = (from c in contexto.Clientes
+                                 where c.clienteID == id
+                                 select c).FirstOrDefault();
+            return View(clienteDelete);
         }
 
         [HttpPost]
@@ -39,16 +69,7 @@ namespace DesafioDesenv.Controllers
                 ModelState.AddModelError("", "Não foi possível criar no momento. Tente novamente.");
             }
             return View();
-        }
-
-        public ActionResult Edit(int id)
-        {
-            var clientEdit = (from c in contexto.Clientes
-                              where c.clienteID == id
-                              select c).FirstOrDefault();
-
-            return View(clientEdit);
-        }
+        }        
 
         [HttpPost]
         public ActionResult Edit(Cliente cliente, int id)
@@ -68,29 +89,14 @@ namespace DesafioDesenv.Controllers
             }            
             return View();
         }
-
-        public ActionResult Details(int id)
-        {
-            var clienteDetails = (from c in contexto.Clientes
-                                  where c.clienteID == id
-                                  select c).FirstOrDefault();
-            return View(clienteDetails);
-        }
-
-        public ActionResult Delete(int id)
-        {
-            var clienteDelete = (from c in contexto.Clientes
-                                 where c.clienteID == id
-                                 select c).FirstOrDefault();
-            return View(clienteDelete);
-        }
-
+        
         [HttpPost]
         public ActionResult Delete(Cliente cliente, int id)
         {
             try
             {
                 var clienteDelete = contexto.Clientes.Find(id);
+
                 contexto.Clientes.Remove(clienteDelete);
                 contexto.SaveChanges();
                 return RedirectToAction("Index");

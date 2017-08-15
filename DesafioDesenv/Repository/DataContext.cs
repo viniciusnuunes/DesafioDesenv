@@ -10,7 +10,7 @@ namespace DesafioDesenv.Repository
         {
         }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
