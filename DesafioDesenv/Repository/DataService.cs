@@ -22,7 +22,7 @@ namespace DesafioDesenv.Repository
             return contexto.Clientes.ToList();
         }        
 
-        public void AddClients(Cliente cliente)
+        public void CreateClients(Cliente cliente)
         {
             contexto.Clientes.Add(cliente);
             contexto.SaveChanges();

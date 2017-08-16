@@ -59,8 +59,7 @@ namespace DesafioDesenv.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    contexto.Clientes.Add(cliente);
-                    contexto.SaveChanges();
+                    service.CreateClients(cliente);
                     return RedirectToAction("Index");
                 }
             }
@@ -78,8 +77,7 @@ namespace DesafioDesenv.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    contexto.Entry(cliente).State = EntityState.Modified;
-                    contexto.SaveChanges();
+                    service.EditClients(cliente, id);
                     return RedirectToAction("Index");
                 }
             }
@@ -95,10 +93,7 @@ namespace DesafioDesenv.Controllers
         {
             try
             {
-                var clienteDelete = contexto.Clientes.Find(id);
-
-                contexto.Clientes.Remove(clienteDelete);
-                contexto.SaveChanges();
+                service.DeleteClientes(cliente, id);
                 return RedirectToAction("Index");
             }
             catch
